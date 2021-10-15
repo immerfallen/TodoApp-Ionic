@@ -98,4 +98,9 @@ export class HomePage {
     })
     await actionSheet.present()
   }
+
+  apagar(task: any){
+    this.tasks = this.tasks.filter(taskArray=> task != taskArray)
+    this.updateLocalStorage()
+  }
 }
