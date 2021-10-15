@@ -11,7 +11,13 @@ export class HomePage {
 
   tasks: any[] = []
 
-  constructor(private alertCtrl: AlertController, private toastCtrl: ToastController) { }
+  constructor(private alertCtrl: AlertController, private toastCtrl: ToastController) {
+    let taskJson = localStorage.getItem('taskDb')
+
+    if(taskJson!=null){
+      this.tasks = JSON.parse(taskJson)
+    }
+   }
 
 
   async showAdd() {
